@@ -6,7 +6,6 @@ import AartiBooking from "./components/AartiBooking";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
 import FloatingElements from "./components/FloatingElements";
-import FloatingDonate from "./components/FloatingDonate";
 
 function App() {
   useEffect(() => {
@@ -61,9 +60,6 @@ function App() {
           </section>
         </main>
       </div>
-
-      {/* Floating Donate QR */}
-      <FloatingDonate />
     </div>
   );
 }
