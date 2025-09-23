@@ -1,17 +1,14 @@
-import React from 'react';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import React from "react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center pt-20 px-4"
-    >
+    <section className="min-h-screen flex items-center justify-center pt-20 px-4">
       <div className="text-center max-w-4xl mx-auto">
         {/* Main Temple Name */}
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 font-devanagari mb-4 animate-pulse">
-            श्री बाड़ी दुर्गा मंदिर
+             श्री बड़ी दुर्गा मंदिर
           </h1>
           <h2 className="text-2xl md:text-3xl text-white font-cinzel mb-6">
             Shri Badi Durga Mandir
@@ -33,21 +30,22 @@ const Hero: React.FC = () => {
           </p>
         </div>
 
-        {/* ✅ QR Donate Section */}
-        <div className="mt-10 flex flex-col items-center">
+        {/* ✅ QR Donation Section */}
+        <div className="mt-12 flex flex-col items-center">
+          <h3 className="text-xl md:text-2xl text-yellow-300 font-semibold mb-4">
+            🙏 Donate to Maa Durga Temple
+          </h3>
           <img
             src="/gallery/QRdonate.jpg"
             alt="Donate QR"
-            className="w-56 h-56 rounded-2xl shadow-xl border-4 border-yellow-400 hover:scale-105 transition-transform duration-300"
+            className="w-48 h-48 rounded-lg shadow-2xl border-4 border-yellow-400"
           />
-          <p className="text-white font-semibold text-lg mt-4">
-            🙏 Donate for Temple Seva
-          </p>
+          <p className="text-orange-200 mt-3">Scan the QR code to donate</p>
         </div>
 
         {/* Contact Information */}
         <div className="grid md:grid-cols-3 gap-6 mt-12">
-          <div className="bg-gradient-to-br from-orange-600/30 to-red-600/30 backdrop-blur-md rounded-xl p-6 border border-orange-400/30 hover:transform hover:scale-105 transition-all duration-300">
+          <div className="bg-gradient-to-br from-orange-600/30 to-red-600/30 backdrop-blur-md rounded-xl p-6 border border-orange-400/30">
             <MapPin className="w-8 h-8 text-yellow-300 mx-auto mb-3" />
             <h4 className="text-white font-semibold mb-2">Address</h4>
             <p className="text-orange-200 text-sm font-devanagari">
@@ -56,7 +54,7 @@ const Hero: React.FC = () => {
             <p className="text-orange-200 text-sm">वैशाली, Bihar</p>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-600/30 to-red-600/30 backdrop-blur-md rounded-xl p-6 border border-orange-400/30 hover:transform hover:scale-105 transition-all duration-300">
+          <div className="bg-gradient-to-br from-orange-600/30 to-red-600/30 backdrop-blur-md rounded-xl p-6 border border-orange-400/30">
             <Phone className="w-8 h-8 text-yellow-300 mx-auto mb-3" />
             <h4 className="text-white font-semibold mb-2">Phone</h4>
             <a
@@ -67,7 +65,7 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-600/30 to-red-600/30 backdrop-blur-md rounded-xl p-6 border border-orange-400/30 hover:transform hover:scale-105 transition-all duration-300">
+          <div className="bg-gradient-to-br from-orange-600/30 to-red-600/30 backdrop-blur-md rounded-xl p-6 border border-orange-400/30">
             <Mail className="w-8 h-8 text-yellow-300 mx-auto mb-3" />
             <h4 className="text-white font-semibold mb-2">Email</h4>
             <a

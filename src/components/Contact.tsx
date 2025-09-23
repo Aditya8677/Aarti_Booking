@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
     
     // Prepare email for general contact
-    const emailSubject = 'General Inquiry - श्री बाड़ी दुर्गा मंदिर';
+    const emailSubject = 'General Inquiry -  श्री बड़ी दुर्गा मंदिर';
     const emailBody = `Dear Temple Administrator,
 
 New message from website contact form:

@@ -21,7 +21,7 @@ const Header: React.FC = () => {
           onClick={() => (window.location.href = "#home")}
         >
           <h1 className="text-xl md:text-2xl font-bold font-devanagari">
-            श्री बाड़ी दुर्गा मंदिर
+             श्री बड़ी दुर्गा मंदिर
           </h1>
           <p className="text-xs md:text-sm text-orange-200 font-cinzel">
             Shri Badi Durga Mandir

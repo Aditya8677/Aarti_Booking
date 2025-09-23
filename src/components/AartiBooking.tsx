@@ -135,7 +135,7 @@ Time: ${formData.timeSlot}
 
   if (isBooked) {
     return (
-      <section className="min-h-screen pt-20 px-4 py-16 flex items-center justify-center">
+      <section id="aarti-booking" className="min-h-screen pt-20 px-4 py-16 flex items-center justify-center">
         <div className="text-center max-w-2xl mx-auto">
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-12 border border-green-400/30 shadow-2xl">
             <Check className="w-20 h-20 text-green-400 mx-auto mb-6 animate-bounce" />
@@ -160,7 +160,7 @@ Time: ${formData.timeSlot}
   }
 
   return (
-    <section className="min-h-screen pt-20 px-4 py-16">
+    <section id="aarti-booking" className="min-h-screen pt-20 px-4 py-16">
       <div className="container mx-auto max-w-2xl">
         {/* Header */}
         <div className="text-center mb-12">

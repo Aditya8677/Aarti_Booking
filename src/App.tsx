@@ -15,7 +15,7 @@ function App() {
     link.rel = "stylesheet";
     document.head.appendChild(link);
 
-    document.title = "श्री बाड़ी दुर्गा मंदिर - Maa Durga Temple";
+    document.title = " श्री बड़ी दुर्गा मंदिर - Maa Durga Temple";
   }, []);
 
   return (

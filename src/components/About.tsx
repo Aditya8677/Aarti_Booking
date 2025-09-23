@@ -45,7 +45,7 @@ const About: React.FC = () => {
             </h4>
             <div className="space-y-4 text-white/90 leading-relaxed">
               <p>
-                श्री बाड़ी दुर्गा मंदिर is a sacred shrine located at Kaunhara Ghat, Hajipur, in the historic district of Vaishali, Bihar. 
+                श्री बड़ी दुर्गा मंदिर is a sacred shrine located at Kaunhara Ghat, Hajipur, in the historic district of Vaishali, Bihar. 
                 This holy place has been a center of devotion and spiritual awakening for generations of devotees.
               </p>
               <p>
