@@ -13,18 +13,18 @@ const Hero: React.FC = () => {
         </h2>
       </div>
 
-      {/* Image with glow effect */}
+      {/* Maa Durga Photo with glow */}
       <div className="relative mb-10 flex justify-center">
         <img
-          src="/gallery/pic9.jpg"
+          src="/gallery/pic9.jpg" // ✅ Correct public path
           alt="Maa Durga"
-          className="w-48 sm:w-64 md:w-80 lg:w-96 rounded-2xl shadow-2xl relative z-10"
+          className="w-48 sm:w-64 md:w-80 lg:w-96 rounded-2xl shadow-2xl relative z-10 object-cover"
         />
-        {/* Glow behind the image */}
+        {/* Glow Effect */}
         <div className="absolute w-[200px] sm:w-[280px] md:w-[350px] lg:w-[420px] h-[200px] sm:h-[280px] md:h-[350px] lg:h-[420px] bg-orange-500/40 blur-3xl rounded-full -z-10"></div>
       </div>
 
-      {/* Button below the image */}
+      {/* Aarti Booking Button */}
       <div className="mt-4">
         <a
           href="#booking"
