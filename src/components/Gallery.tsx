@@ -4,70 +4,71 @@ import { X } from 'lucide-react';
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // Using placeholder images from Pexels for temple/spiritual themes
+  // Local temple images from /public/gallery/
   const galleryImages = [
     {
       id: 1,
-      src: 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg',
-      title: 'Temple Morning Prayer',
-      category: 'Daily Worship'
+      src: '/gallery/Dusshera.jpg',
+      title: 'दशहरा उत्सव',
+      category: 'Festivals',
     },
     {
       id: 2,
-      src: 'https://images.pexels.com/photos/461865/pexels-photo-461865.jpeg',
-      title: 'Evening Aarti',
-      category: 'Aarti'
+      src: '/gallery/maa durga sthapit.jpg',
+      title: 'माँ दुर्गा स्थापित',
+      category: 'Daily Worship',
     },
     {
       id: 3,
-      src: 'https://images.pexels.com/photos/1120611/pexels-photo-1120611.jpeg',
-      title: 'Festival Celebration',
-      category: 'Festivals'
+      src: '/gallery/pandir ji.jpg',
+      title: 'पंडित जी',
+      category: 'Community',
     },
     {
       id: 4,
-      src: 'https://images.pexels.com/photos/3014019/pexels-photo-3014019.jpeg',
-      title: 'Temple Interior',
-      category: 'Architecture'
+      src: '/gallery/sankh.jpg',
+      title: 'शंख पूजा',
+      category: 'Rituals',
     },
     {
       id: 5,
-      src: 'https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg',
-      title: 'Sacred Diyas',
-      category: 'Rituals'
+      src: '/gallery/visharjan 1.jpg',
+      title: 'विसर्जन - भाग 1',
+      category: 'Festivals',
     },
     {
       id: 6,
-      src: 'https://images.pexels.com/photos/6913348/pexels-photo-6913348.jpeg',
-      title: 'Devotees in Prayer',
-      category: 'Community'
+      src: '/gallery/visharjan 2.jpg',
+      title: 'विसर्जन - भाग 2',
+      category: 'Festivals',
     },
     {
       id: 7,
-      src: 'https://images.pexels.com/photos/730869/pexels-photo-730869.jpeg',
-      title: 'Temple Bells',
-      category: 'Sacred Items'
+      src: '/gallery/visharjan 3.jpg',
+      title: 'विसर्जन - भाग 3',
+      category: 'Festivals',
     },
     {
       id: 8,
-      src: 'https://images.pexels.com/photos/1005640/pexels-photo-1005640.jpeg',
-      title: 'Special Ceremony',
-      category: 'Events'
+      src: '/gallery/visharjan 4.jpg',
+      title: 'विसर्जन - भाग 4',
+      category: 'Festivals',
     },
-    {
-      id: 9,
-      src: 'https://images.pexels.com/photos/3014925/pexels-photo-3014925.jpeg',
-      title: 'Temple Courtyard',
-      category: 'Architecture'
-    }
   ];
 
-  const categories = ['All', 'Daily Worship', 'Aarti', 'Festivals', 'Architecture', 'Rituals', 'Community', 'Sacred Items', 'Events'];
+  const categories = [
+    'All',
+    'Daily Worship',
+    'Festivals',
+    'Rituals',
+    'Community',
+  ];
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const filteredImages = activeCategory === 'All' 
-    ? galleryImages 
-    : galleryImages.filter(image => image.category === activeCategory);
+  const filteredImages =
+    activeCategory === 'All'
+      ? galleryImages
+      : galleryImages.filter((image) => image.category === activeCategory);
 
   const openModal = (imageSrc: string) => {
     setSelectedImage(imageSrc);
@@ -89,7 +90,8 @@ const Gallery: React.FC = () => {
             Temple Gallery
           </h3>
           <p className="text-white/80 max-w-2xl mx-auto">
-            Experience the divine beauty and spiritual atmosphere of our sacred temple through these captured moments
+            Experience the divine beauty and spiritual atmosphere of our sacred
+            temple through these captured moments
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto rounded-full mt-6"></div>
         </div>
@@ -127,16 +129,14 @@ const Gallery: React.FC = () => {
                   loading="lazy"
                 />
               </div>
-              
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h4 className="text-white font-semibold text-lg mb-1">
                     {image.title}
                   </h4>
-                  <p className="text-orange-200 text-sm">
-                    {image.category}
-                  </p>
+                  <p className="text-orange-200 text-sm">{image.category}</p>
                 </div>
               </div>
 
@@ -169,7 +169,7 @@ const Gallery: React.FC = () => {
               >
                 <X size={32} />
               </button>
-              
+
               <img
                 src={selectedImage}
                 alt="Gallery Image"
@@ -186,9 +186,11 @@ const Gallery: React.FC = () => {
               मंदिर की यादें
             </h4>
             <p className="text-white/80 leading-relaxed">
-              These sacred moments capture the divine essence of our temple - from daily worship rituals to 
-              grand festivals, from quiet prayer sessions to community gatherings. Each image tells a story 
-              of faith, devotion, and the timeless traditions that connect us to the divine mother Durga.
+              These sacred moments capture the divine essence of our temple -
+              from daily worship rituals to grand festivals, from quiet prayer
+              sessions to community gatherings. Each image tells a story of
+              faith, devotion, and the timeless traditions that connect us to
+              the divine mother Durga.
             </p>
             <p className="text-orange-200 mt-4 font-devanagari">
               🙏 हर तस्वीर में छुपी है माता की कृपा
