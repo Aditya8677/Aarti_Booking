@@ -2,64 +2,54 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center pt-24 px-4 text-center relative">
-      {/* Temple Name */}
-      <div className="mb-8">
-        <h1 className="text-4xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 font-devanagari mb-4 animate-pulse">
+    <section
+      id="home"
+      className="min-h-screen flex flex-col items-center justify-center pt-20 px-4"
+    >
+      <div className="text-center max-w-4xl mx-auto">
+        {/* Temple Name */}
+        <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 font-devanagari mb-4 animate-pulse">
           श्री बड़ी दुर्गा मंदिर
         </h1>
-        <h2 className="text-lg md:text-3xl text-white font-cinzel mb-6">
+        <h2 className="text-2xl md:text-3xl text-white font-cinzel mb-8">
           Shri Badi Durga Mandir
         </h2>
-      </div>
 
-      {/* QR Code centered */}
-      <div className="relative mb-6 flex flex-col items-center justify-center">
-        {/* QR Code */}
-        <a href="/gallery/QRdonate.jpg" target="_blank" rel="noopener noreferrer">
+        {/* Welcome Box */}
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-10 border border-white/20 shadow-2xl">
+          <h3 className="text-xl md:text-2xl text-orange-200 font-devanagari mb-4">
+            माता दुर्गा के दरबार में आपका स्वागत है
+          </h3>
+          <p className="text-lg text-white font-cinzel mb-4">
+            Welcome to the divine court of Maa Durga
+          </p>
+          <p className="text-white/80 leading-relaxed max-w-2xl mx-auto">
+            Experience divine blessings at our sacred temple. Join us for daily
+            aarti and special prayers. Book your aarti slot online and be part
+            of our spiritual community.
+          </p>
+        </div>
+
+        {/* QR Code Section */}
+        <div className="flex flex-col items-center mb-8">
           <img
             src="/gallery/QRdonate.jpg"
             alt="Donate QR"
-            className="w-44 sm:w-56 md:w-64 lg:w-72 rounded-xl shadow-2xl relative z-10 object-contain cursor-pointer hover:scale-105 transition-transform"
+            className="w-48 h-48 md:w-64 md:h-64 rounded-xl shadow-lg border-4 border-yellow-400"
           />
-        </a>
-        {/* Glow behind QR */}
-        <div className="absolute w-[220px] sm:w-[260px] md:w-[300px] lg:w-[340px] h-[220px] sm:h-[260px] md:h-[300px] lg:h-[340px] bg-orange-500/30 blur-3xl rounded-full -z-10"></div>
-      </div>
+          <p className="mt-4 text-lg text-white font-semibold">
+            🙏 Donate for Temple
+          </p>
+        </div>
 
-      {/* Donate Text below QR */}
-      <h3 className="text-2xl md:text-3xl font-bold text-orange-300 mb-2">
-        Donate for Temple
-      </h3>
-      <p className="text-white/80 text-sm md:text-base max-w-md mb-8">
-        Scan this QR code to make your sacred contribution 🙏  
-        Every donation helps us continue the rituals, celebrations, and temple services.
-      </p>
-
-      {/* Aarti Booking Button */}
-      <div>
+        {/* Aarti Booking Button */}
         <a
           href="#booking"
-          className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg md:text-xl font-semibold hover:from-yellow-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center justify-center space-x-2"
+          className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-yellow-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center space-x-2"
         >
           <span>🙏</span>
           <span>Book Your Aarti Online</span>
         </a>
-      </div>
-
-      {/* Welcome Text */}
-      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-8 mt-12 border border-white/20 shadow-2xl max-w-3xl">
-        <h3 className="text-lg sm:text-xl md:text-2xl text-orange-200 font-devanagari mb-4">
-          माता दुर्गा के दरबार में आपका स्वागत है
-        </h3>
-        <p className="text-base sm:text-lg text-white mb-6 font-cinzel">
-          Welcome to the divine court of Maa Durga
-        </p>
-        <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-          Experience divine blessings at our sacred temple. Join us for daily
-          aarti and special prayers. Book your aarti slot online and be part of
-          our spiritual community.
-        </p>
       </div>
     </section>
   );
