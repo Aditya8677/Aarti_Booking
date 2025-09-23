@@ -13,15 +13,17 @@ const Hero: React.FC = () => {
         </h2>
       </div>
 
-      {/* Maa Durga Photo with glow */}
+      {/* QR Code for Donation */}
       <div className="relative mb-10 flex justify-center">
-        <img
-          src="/gallery/pic9.jpg" // ✅ Correct public path
-          alt="Maa Durga"
-          className="w-48 sm:w-64 md:w-80 lg:w-96 rounded-2xl shadow-2xl relative z-10 object-cover"
-        />
-        {/* Glow Effect */}
-        <div className="absolute w-[200px] sm:w-[280px] md:w-[350px] lg:w-[420px] h-[200px] sm:h-[280px] md:h-[350px] lg:h-[420px] bg-orange-500/40 blur-3xl rounded-full -z-10"></div>
+        <a href="/gallery/QRdonate.jpg" target="_blank" rel="noopener noreferrer">
+          <img
+            src="/gallery/QRdonate.jpg" // ✅ Your QR code from public/gallery
+            alt="Donate QR"
+            className="w-40 sm:w-56 md:w-64 lg:w-72 rounded-xl shadow-2xl relative z-10 object-contain cursor-pointer hover:scale-105 transition-transform"
+          />
+        </a>
+        {/* Glow effect behind QR */}
+        <div className="absolute w-[180px] sm:w-[240px] md:w-[280px] lg:w-[320px] h-[180px] sm:h-[240px] md:h-[280px] lg:h-[320px] bg-orange-500/30 blur-3xl rounded-full -z-10"></div>
       </div>
 
       {/* Aarti Booking Button */}
