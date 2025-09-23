@@ -1,16 +1,11 @@
 import React from 'react';
 import { Home, Info, Calendar, Phone, Image } from 'lucide-react';
 
-interface HeaderProps {
-  activeSection: string;
-  setActiveSection: (section: string) => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
+const Header: React.FC = () => {
   const menuItems = [
     { id: 'home', label: 'Home', hindiLabel: 'होम', icon: Home },
     { id: 'about', label: 'About', hindiLabel: 'परिचय', icon: Info },
-    { id: 'booking', label: 'Aarti Booking', hindiLabel: 'आरती बुकिंग', icon: Calendar },
+    { id: 'aarti-booking', label: 'Aarti Booking', hindiLabel: 'आरती बुकिंग', icon: Calendar },
     { id: 'contact', label: 'Contact', hindiLabel: 'संपर्क', icon: Phone },
     { id: 'gallery', label: 'Gallery', hindiLabel: 'गैलरी', icon: Image },
   ];
@@ -29,23 +24,19 @@ const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
             </p>
           </div>
 
-          {/* Navigation Menu */}
+          {/* Navigation Menu (Desktop) */}
           <div className="hidden md:flex space-x-1">
             {menuItems.map((item) => {
               const Icon = item.icon;
               return (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => setActiveSection(item.id)}
-                  className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 ${
-                    activeSection === item.id
-                      ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-lg transform scale-105'
-                      : 'text-orange-200 hover:text-white hover:bg-white/10'
-                  }`}
+                  href={`#${item.id}`}
+                  className="px-4 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 text-orange-200 hover:text-white hover:bg-white/10"
                 >
                   <Icon size={18} />
                   <span className="font-medium">{item.label}</span>
-                </button>
+                </a>
               );
             })}
           </div>
@@ -55,17 +46,13 @@ const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection }) => {
             {menuItems.map((item) => {
               const Icon = item.icon;
               return (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => setActiveSection(item.id)}
-                  className={`p-2 rounded-lg transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-lg'
-                      : 'text-orange-200 hover:text-white hover:bg-white/10'
-                  }`}
+                  href={`#${item.id}`}
+                  className="p-2 rounded-lg transition-all duration-300 text-orange-200 hover:text-white hover:bg-white/10"
                 >
                   <Icon size={20} />
-                </button>
+                </a>
               );
             })}
           </div>

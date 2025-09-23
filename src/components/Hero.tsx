@@ -61,9 +61,13 @@ const Hero: React.FC = () => {
 
         {/* Call to Action */}
         <div className="mt-12">
-          <button className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-yellow-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105 shadow-2xl">
-            🙏 Book Your Aarti Online
-          </button>
+          <a
+            href="#aarti-booking"
+            className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-yellow-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center justify-center space-x-2"
+          >
+            <span>🙏</span>
+            <span>Book Your Aarti Online</span>
+          </a>
         </div>
       </div>
     </section>
