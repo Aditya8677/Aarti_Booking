@@ -6,23 +6,30 @@ import AartiBooking from "./components/AartiBooking";
 import Contact from "./components/Contact";
 import Gallery from "./components/Gallery";
 import FloatingElements from "./components/FloatingElements";
+import FloatingDonate from "./components/FloatingDonate";
 
 function App() {
   useEffect(() => {
+    // Add Google Fonts
     const link = document.createElement("link");
     link.href =
       "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Cinzel:wght@400;500;600&display=swap";
     link.rel = "stylesheet";
     document.head.appendChild(link);
 
-    document.title = " श्री बड़ी दुर्गा मंदिर - Maa Durga Temple";
+    // Page Title
+    document.title = "श्री बड़ी दुर्गा मंदिर - Maa Durga Temple";
+
+    // Smooth scrolling
+    document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-900 via-red-800 to-yellow-600 relative overflow-hidden">
+      {/* Floating Background */}
       <FloatingElements />
 
-      {/* Background Glow */}
+      {/* Gradient Overlay */}
       <div className="fixed inset-0 opacity-10">
         <div
           className="absolute inset-0"
@@ -33,18 +40,17 @@ function App() {
         ></div>
       </div>
 
-      {/* Main Content */}
+      {/* Content */}
       <div className="relative z-10">
         <Header />
-
-        <main className="transition-all duration-700 ease-in-out">
+        <main>
           <section id="home">
             <Hero />
           </section>
           <section id="about">
             <About />
           </section>
-          <section id="aarti-booking">
+          <section id="booking">
             <AartiBooking />
           </section>
           <section id="gallery">
@@ -55,6 +61,9 @@ function App() {
           </section>
         </main>
       </div>
+
+      {/* Floating Donate QR */}
+      <FloatingDonate />
     </div>
   );
 }
