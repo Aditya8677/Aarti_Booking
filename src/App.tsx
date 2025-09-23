@@ -1,31 +1,28 @@
-import React, { useEffect } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import AartiBooking from './components/AartiBooking';
-import Contact from './components/Contact';
-import Gallery from './components/Gallery';
-import FloatingElements from './components/FloatingElements';
+import React, { useEffect } from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import AartiBooking from "./components/AartiBooking";
+import Contact from "./components/Contact";
+import Gallery from "./components/Gallery";
+import FloatingElements from "./components/FloatingElements";
 
 function App() {
   useEffect(() => {
-    // Add Google Fonts for Hindi + Cinzel
-    const link = document.createElement('link');
+    const link = document.createElement("link");
     link.href =
-      'https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Cinzel:wght@400;500;600&display=swap';
-    link.rel = 'stylesheet';
+      "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Cinzel:wght@400;500;600&display=swap";
+    link.rel = "stylesheet";
     document.head.appendChild(link);
 
-    // Update document title
-    document.title = 'श्री बाड़ी दुर्गा मंदिर - Maa Durga Temple';
+    document.title = "श्री बाड़ी दुर्गा मंदिर - Maa Durga Temple";
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-900 via-red-800 to-yellow-600 relative overflow-hidden scroll-smooth">
-      {/* Animated Background Elements */}
+    <div className="min-h-screen bg-gradient-to-br from-orange-900 via-red-800 to-yellow-600 relative overflow-hidden">
       <FloatingElements />
 
-      {/* Background Pattern Overlay */}
+      {/* Background Glow */}
       <div className="fixed inset-0 opacity-10">
         <div
           className="absolute inset-0"
@@ -36,30 +33,25 @@ function App() {
         ></div>
       </div>
 
+      {/* Main Content */}
       <div className="relative z-10">
-        {/* Header */}
         <Header />
 
-        {/* Sections */}
         <main className="transition-all duration-700 ease-in-out">
           <section id="home">
             <Hero />
           </section>
-
           <section id="about">
             <About />
           </section>
-
           <section id="aarti-booking">
             <AartiBooking />
           </section>
-
-          <section id="contact">
-            <Contact />
-          </section>
-
           <section id="gallery">
             <Gallery />
+          </section>
+          <section id="contact">
+            <Contact />
           </section>
         </main>
       </div>

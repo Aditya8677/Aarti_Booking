@@ -1,72 +1,26 @@
-import React, { useState } from 'react';
-import { X } from 'lucide-react';
+import React, { useState } from "react";
+import { X } from "lucide-react";
 
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Local temple images from /public/gallery/
   const galleryImages = [
-    {
-      id: 1,
-      src: '/gallery/Dusshera.jpg',
-      title: 'दशहरा उत्सव',
-      category: 'Festivals',
-    },
-    {
-      id: 2,
-      src: '/gallery/maa durga staphit.jpg',
-      title: 'माँ दुर्गा स्थापित',
-      category: 'Daily Worship',
-    },
-    {
-      id: 3,
-      src: '/gallery/pandir ji.jpg',
-      title: 'पंडित जी',
-      category: 'Community',
-    },
-    {
-      id: 4,
-      src: '/gallery/sankh.jpg',
-      title: 'शंख पूजा',
-      category: 'Rituals',
-    },
-    {
-      id: 5,
-      src: '/gallery/visharjan 1.jpg',
-      title: 'विसर्जन - भाग 1',
-      category: 'Festivals',
-    },
-    {
-      id: 6,
-      src: '/gallery/visharjan 2.jpg',
-      title: 'विसर्जन - भाग 2',
-      category: 'Festivals',
-    },
-    {
-      id: 7,
-      src: '/gallery/visharjan 3.jpg',
-      title: 'विसर्जन - भाग 3',
-      category: 'Festivals',
-    },
-    {
-      id: 8,
-      src: '/gallery/visharjan 4.jpg',
-      title: 'विसर्जन - भाग 4',
-      category: 'Festivals',
-    },
+    { id: 1, src: "/gallery/pic1.jpg", title: "दशहरा उत्सव", category: "Festivals" },
+    { id: 2, src: "/gallery/pic2.jpg", title: "माँ दुर्गा स्थापित", category: "Daily Worship" },
+    { id: 3, src: "/gallery/pic3.jpg", title: "पंडित जी", category: "Community" },
+    { id: 4, src: "/gallery/pic4.jpg", title: "शंख पूजा", category: "Rituals" },
+    { id: 5, src: "/gallery/pic5.jpg", title: "विसर्जन - भाग 1", category: "Festivals" },
+    { id: 6, src: "/gallery/pic6.jpg", title: "विसर्जन - भाग 2", category: "Festivals" },
+    { id: 7, src: "/gallery/pic7.jpg", title: "विसर्जन - भाग 3", category: "Festivals" },
+    { id: 8, src: "/gallery/pic8.jpg", title: "विसर्जन - भाग 4", category: "Festivals" },
   ];
 
-  const categories = [
-    'All',
-    'Daily Worship',
-    'Festivals',
-    'Rituals',
-    'Community',
-  ];
-  const [activeCategory, setActiveCategory] = useState('All');
+  const categories = ["All", "Daily Worship", "Festivals", "Rituals", "Community"];
+  const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredImages =
-    activeCategory === 'All'
+    activeCategory === "All"
       ? galleryImages
       : galleryImages.filter((image) => image.category === activeCategory);
 
@@ -90,8 +44,7 @@ const Gallery: React.FC = () => {
             Temple Gallery
           </h3>
           <p className="text-white/80 max-w-2xl mx-auto">
-            Experience the divine beauty and spiritual atmosphere of our sacred
-            temple through these captured moments
+            Experience the divine beauty and spiritual atmosphere of our sacred temple through these captured moments
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-400 mx-auto rounded-full mt-6"></div>
         </div>
@@ -104,8 +57,8 @@ const Gallery: React.FC = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-4 py-2 rounded-full transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-lg transform scale-105'
-                  : 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white'
+                  ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-lg transform scale-105"
+                  : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
               }`}
             >
               {category}
@@ -121,11 +74,11 @@ const Gallery: React.FC = () => {
               className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
               onClick={() => openModal(image.src)}
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="w-full h-80 overflow-hidden flex items-center justify-center bg-black/20">
                 <img
                   src={image.src}
                   alt={image.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="max-h-80 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
@@ -153,9 +106,7 @@ const Gallery: React.FC = () => {
         {/* No Images Message */}
         {filteredImages.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-white/60 text-lg">
-              No images found in this category.
-            </p>
+            <p className="text-white/60 text-lg">No images found in this category.</p>
           </div>
         )}
 
@@ -186,11 +137,9 @@ const Gallery: React.FC = () => {
               मंदिर की यादें
             </h4>
             <p className="text-white/80 leading-relaxed">
-              These sacred moments capture the divine essence of our temple -
-              from daily worship rituals to grand festivals, from quiet prayer
-              sessions to community gatherings. Each image tells a story of
-              faith, devotion, and the timeless traditions that connect us to
-              the divine mother Durga.
+              These sacred moments capture the divine essence of our temple - from daily worship rituals to 
+              grand festivals, from quiet prayer sessions to community gatherings. Each image tells a story 
+              of faith, devotion, and the timeless traditions that connect us to the divine mother Durga.
             </p>
             <p className="text-orange-200 mt-4 font-devanagari">
               🙏 हर तस्वीर में छुपी है माता की कृपा
