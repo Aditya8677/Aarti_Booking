@@ -13,21 +13,31 @@ const Hero: React.FC = () => {
         </h2>
       </div>
 
-      {/* QR Code for Donation */}
-      <div className="relative mb-10 flex justify-center">
+      {/* QR Code centered */}
+      <div className="relative mb-6 flex flex-col items-center justify-center">
+        {/* QR Code */}
         <a href="/gallery/QRdonate.jpg" target="_blank" rel="noopener noreferrer">
           <img
-            src="/gallery/QRdonate.jpg" // ✅ Your QR code from public/gallery
+            src="/gallery/QRdonate.jpg"
             alt="Donate QR"
-            className="w-40 sm:w-56 md:w-64 lg:w-72 rounded-xl shadow-2xl relative z-10 object-contain cursor-pointer hover:scale-105 transition-transform"
+            className="w-44 sm:w-56 md:w-64 lg:w-72 rounded-xl shadow-2xl relative z-10 object-contain cursor-pointer hover:scale-105 transition-transform"
           />
         </a>
-        {/* Glow effect behind QR */}
-        <div className="absolute w-[180px] sm:w-[240px] md:w-[280px] lg:w-[320px] h-[180px] sm:h-[240px] md:h-[280px] lg:h-[320px] bg-orange-500/30 blur-3xl rounded-full -z-10"></div>
+        {/* Glow behind QR */}
+        <div className="absolute w-[220px] sm:w-[260px] md:w-[300px] lg:w-[340px] h-[220px] sm:h-[260px] md:h-[300px] lg:h-[340px] bg-orange-500/30 blur-3xl rounded-full -z-10"></div>
       </div>
 
+      {/* Donate Text below QR */}
+      <h3 className="text-2xl md:text-3xl font-bold text-orange-300 mb-2">
+        Donate for Temple
+      </h3>
+      <p className="text-white/80 text-sm md:text-base max-w-md mb-8">
+        Scan this QR code to make your sacred contribution 🙏  
+        Every donation helps us continue the rituals, celebrations, and temple services.
+      </p>
+
       {/* Aarti Booking Button */}
-      <div className="mt-4">
+      <div>
         <a
           href="#booking"
           className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg md:text-xl font-semibold hover:from-yellow-400 hover:to-orange-400 transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center justify-center space-x-2"
