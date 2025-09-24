@@ -72,7 +72,7 @@ Time: ${formData.timeSlot}
       )}`;
       window.open(whatsappUrl, "_blank");
 
-      // ✅ EmailJS: Send to Admin
+      // ✅ EmailJS: Send to Admin (Temple Email)
       emailjs
         .send(
           "service_clrf1s2", // Service ID
@@ -83,6 +83,7 @@ Time: ${formData.timeSlot}
             email: formData.email,
             date: formData.date,
             time: formData.timeSlot,
+            admin_email: "konharabadidurgamandir@gmail.com", // temple email
           },
           "Kesi-Dd4Q4Lkx2J-J" // Public Key
         )
