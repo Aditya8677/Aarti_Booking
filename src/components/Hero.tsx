@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
         <div className="w-[500px] h-[500px] bg-gradient-radial from-yellow-400/40 via-orange-400/20 to-transparent rounded-full blur-3xl"></div>
       </div>
 
-      {/* Temple name */}
+      {/* Temple name + heritage year */}
       <motion.div
         className="relative z-10 text-center mb-8"
         initial={{ opacity: 0, y: -50 }}
@@ -23,76 +23,67 @@ const Hero: React.FC = () => {
         <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 font-devanagari animate-pulse">
           श्री बड़ी दुर्गा मंदिर
         </h1>
+        <p className="text-lg md:text-xl text-yellow-200 mt-2 font-cinzel italic">
+          (मंदिर स्थापित 1835)
+        </p>
         <h2 className="text-2xl md:text-3xl text-white font-cinzel mt-3">
           Shri Badi Durga Mandir
         </h2>
       </motion.div>
 
-      {/* Flexbox for Committee (left) + QR Donation (right) */}
-      <div className="grid md:grid-cols-2 gap-8 items-start max-w-5xl w-full">
+      {/* Flex container for Committee + QR */}
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+      >
         {/* Committee Members */}
-        <motion.div
-          className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-orange-400/30 shadow-2xl flex flex-col justify-between min-h-[320px]"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          <h3 className="text-lg font-semibold text-yellow-300 mb-3 font-devanagari text-center">
-            समिति के सदस्य
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-orange-400/30 shadow-2xl text-left w-[300px] md:w-[350px]">
+          <h3 className="text-lg font-semibold text-orange-200 mb-4 text-center">
+            🙏 समिति सदस्य
           </h3>
-          <ul className="text-white/80 space-y-2 font-devanagari text-sm leading-relaxed">
+          <ul className="space-y-2 text-sm text-white/90">
             <li>
-              <span className="text-orange-300 font-semibold">(अध्यक्ष)</span>{" "}
-              जयपत पासवान
+              <strong>(अध्यक्ष)</strong> जयपत पासवान
             </li>
             <li>
-              <span className="text-orange-300 font-semibold">(सचिव)</span> बॉबी
+              <strong>(सचिव)</strong> बॉबी
             </li>
             <li>
-              <span className="text-orange-300 font-semibold">(कोषाध्यक्ष)</span>{" "}
-              दीपक कुमार (दीपू), श्याम नारायण साह
+              <strong>(कोषाध्यक्ष)</strong> दीपक कुमार (दीपू), श्याम नारायण साह
             </li>
             <li>
-              <span className="text-orange-300 font-semibold">(ट्रस्टी)</span>{" "}
-              पंकज शर्मा, राजा, मनसुख पासवान, दीपक कुमार सिंह, सुनील कुमार
-              शर्मा
+              <strong>(ट्रस्टी)</strong> पंकज शर्मा, राजा, मनसुख पासवान, दीपक
+              कुमार सिंह, सुनील कुमार शर्मा
             </li>
             <li>
-              <span className="text-orange-300 font-semibold">(मुख्य संरक्षक)</span>{" "}
-              राजकुमार श्रीवास्तव
+              <strong>(मुख्य संरक्षक)</strong> राजकुमार श्रीवास्तव
             </li>
             <li>
-              <span className="text-orange-300 font-semibold">(पूजा कार्यकारिणी)</span>{" "}
-              रवि, सुक्खू, राजा, विक्की, राहुल, छोटू, सुजीत, किस्सू
+              <strong>(पूजा कार्यकारिणी)</strong> रवि, सुक्खू, राजा, विक्की,
+              राहुल, छोटू, सुजीत, किस्सू
             </li>
           </ul>
-        </motion.div>
+        </div>
 
         {/* QR + Donate */}
-        <motion.div
-          className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-orange-400/30 shadow-2xl flex flex-col justify-between min-h-[320px] text-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          <div>
-            <h3 className="text-lg font-semibold text-orange-200 mb-3">
-              🙏 Donate for Temple
-            </h3>
-            <img
-              src="/gallery/QRdonate.jpg"
-              alt="Donate QR"
-              className="mx-auto w-44 h-44 rounded-lg shadow-lg border border-yellow-400 divine-glow"
-            />
-            <p className="text-white/70 mt-2 text-sm">Scan the QR to Donate</p>
-          </div>
-          <p className="text-yellow-300 mt-4 text-sm font-medium leading-relaxed">
-            मंदिर के बैंक खाते से जुड़ा फोन नं0{" "}
-            <span className="font-bold">9122813351</span> पर आप किसी भी प्रकार का
-            दान दे सकते है।
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-orange-400/30 shadow-2xl text-center w-[300px] md:w-[350px]">
+          <h3 className="text-lg font-semibold text-orange-200 mb-3">
+            🙏 Donate for Temple
+          </h3>
+          <img
+            src="/gallery/QRdonate.jpg"
+            alt="Donate QR"
+            className="mx-auto w-44 h-44 rounded-lg shadow-lg border border-yellow-400 divine-glow"
+          />
+          <p className="text-white/70 mt-2 text-sm">Scan the QR to Donate</p>
+          <p className="text-orange-200 text-xs mt-2">
+            मंदिर के बैंक खाते से जुड़ा फोन नं० <strong>9122813351</strong> पर आप
+            किसी भी प्रकार का दान दे सकते हैं।
           </p>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
 
       {/* Book Aarti Button */}
       <motion.div
