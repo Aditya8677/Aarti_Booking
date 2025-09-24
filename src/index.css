@@ -13,7 +13,11 @@
   font-family: 'Cinzel', serif;
 }
 
-/* Custom animations and effects */
+/* ===================== */
+/* 🔥 Divine Animations  */
+/* ===================== */
+
+/* Floating aura lights */
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(180deg); }
@@ -24,6 +28,14 @@
   50% { opacity: 1; transform: scale(1); }
 }
 
+/* Flame-like gradient wave */
+@keyframes flame-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating diya flames */
 @keyframes flame-flicker {
   0%, 100% { transform: scaleY(1) scaleX(1); }
   25% { transform: scaleY(0.9) scaleX(1.1); }
@@ -31,120 +43,112 @@
   75% { transform: scaleY(0.95) scaleX(1.05); }
 }
 
-/* Custom utilities */
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+/* Apply to elements */
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-sparkle { animation: sparkle 2s ease-in-out infinite; }
+.animate-flame { animation: flame-flicker 1s ease-in-out infinite; }
+
+/* Background gradient animation */
+.animated-bg {
+  background: linear-gradient(-45deg, #7c2d12, #9a3412, #ea580c, #fbbf24);
+  background-size: 400% 400%;
+  animation: flame-bg 12s ease infinite;
 }
 
-.animate-sparkle {
-  animation: sparkle 2s ease-in-out infinite;
+/* Glowing aura around sections */
+.divine-section {
+  position: relative;
+  z-index: 1;
 }
 
-.animate-flame {
-  animation: flame-flicker 1s ease-in-out infinite;
+.divine-section::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.15), transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  animation: float 8s infinite ease-in-out;
 }
 
-.bg-gradient-radial {
-  background: radial-gradient(circle, var(--tw-gradient-stops));
+/* Sparkle particles */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fbbf24;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 3s infinite ease-in-out;
 }
+
+/* ===================== */
+/* General Styling Fixes */
+/* ===================== */
 
 /* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-}
-
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.1); }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #f97316, #ea580c);
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #ea580c, #dc2626);
 }
 
-/* Input placeholder styling */
-input::placeholder,
-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
+/* Input placeholder */
+input::placeholder, textarea::placeholder { color: rgba(255, 255, 255, 0.5); }
 
-/* Focus styles for better accessibility */
-input:focus,
-textarea:focus,
-select:focus,
-button:focus {
+/* Focus */
+input:focus, textarea:focus, select:focus, button:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
 }
 
-/* Button hover effects */
-button {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* Button hover */
+button { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 
-/* Image loading animation */
-img {
-  transition: opacity 0.3s ease;
-}
+/* Image fade-in */
+img { transition: opacity 0.3s ease; }
+img[loading="lazy"] { opacity: 0; }
+img[loading="lazy"].loaded { opacity: 1; }
 
-img[loading="lazy"] {
-  opacity: 0;
-}
-
-img[loading="lazy"].loaded {
-  opacity: 1;
-}
-
-/* Text selection styling */
-::selection {
-  background: rgba(249, 115, 22, 0.3);
-  color: white;
-}
+/* Text selection */
+::selection { background: rgba(249, 115, 22, 0.3); color: white; }
 
 /* Backdrop blur fallback */
 @supports not (backdrop-filter: blur(10px)) {
-  .backdrop-blur-md {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+  .backdrop-blur-md { background-color: rgba(0, 0, 0, 0.5); }
 }
 
-/* Custom gradient classes */
-.gradient-orange-red {
-  background: linear-gradient(135deg, #f97316, #dc2626);
-}
+/* Gradients */
+.gradient-orange-red { background: linear-gradient(135deg, #f97316, #dc2626); }
+.gradient-gold-orange { background: linear-gradient(135deg, #fbbf24, #f97316); }
 
-.gradient-gold-orange {
-  background: linear-gradient(135deg, #fbbf24, #f97316);
-}
-
-/* Animation delays for staggered effects */
+/* Animation delays */
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
 .delay-500 { animation-delay: 0.5s; }
 
-/* Sacred symbol styling */
-.sacred-symbol {
-  text-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
-}
+/* Sacred glow */
+.sacred-symbol { text-shadow: 0 0 10px rgba(249, 115, 22, 0.5); }
 
-/* Responsive text sizes */
+/* Responsive text */
 @media (max-width: 640px) {
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
   .text-responsive { font-size: 0.875rem; }
 }
 
-/* Loading spinner */
+/* Spinner */
 .spinner {
   border: 2px solid rgba(249, 115, 22, 0.3);
   border-radius: 50%;
@@ -153,13 +157,9 @@ img[loading="lazy"].loaded {
   height: 20px;
   animation: spin 1s linear infinite;
 }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Divine glow effect */
+/* Divine glow */
 .divine-glow {
   box-shadow: 0 0 20px rgba(249, 115, 22, 0.3), 0 0 40px rgba(249, 115, 22, 0.1);
 }
@@ -169,13 +169,12 @@ img[loading="lazy"].loaded {
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Temple card effect */
+/* Temple card */
 .temple-card {
   background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(220, 38, 38, 0.1));
   backdrop-filter: blur(10px);
   border: 1px solid rgba(249, 115, 22, 0.2);
 }
-
 .temple-card:hover {
   background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(220, 38, 38, 0.2));
   border-color: rgba(249, 115, 22, 0.4);

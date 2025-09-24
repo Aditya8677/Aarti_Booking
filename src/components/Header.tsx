@@ -8,8 +8,8 @@ const Header: React.FC = () => {
     { id: "home", label: "Home", icon: Home },
     { id: "about", label: "About", icon: Info },
     { id: "aarti-booking", label: "Aarti Booking", icon: Calendar },
-    { id: "contact", label: "Contact", icon: Phone },
     { id: "gallery", label: "Gallery", icon: Image },
+    { id: "contact", label: "Contact", icon: Phone },
   ];
 
   return (

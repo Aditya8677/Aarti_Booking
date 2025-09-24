@@ -9,27 +9,23 @@ import FloatingElements from "./components/FloatingElements";
 
 function App() {
   useEffect(() => {
-    // Add Google Fonts
     const link = document.createElement("link");
     link.href =
       "https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Cinzel:wght@400;500;600&display=swap";
     link.rel = "stylesheet";
     document.head.appendChild(link);
 
-    // Page Title
     document.title = "श्री बड़ी दुर्गा मंदिर - Maa Durga Temple";
-
-    // Smooth scrolling
     document.documentElement.style.scrollBehavior = "smooth";
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-900 via-red-800 to-yellow-600 relative overflow-hidden">
-      {/* Floating Background */}
+    <div className="min-h-screen bg-gradient-to-br from-orange-900 via-red-800 to-yellow-700 relative overflow-hidden">
+      {/* Floating Diyas + Om Symbols */}
       <FloatingElements />
 
-      {/* Gradient Overlay */}
-      <div className="fixed inset-0 opacity-10">
+      {/* Gradient overlay */}
+      <div className="fixed inset-0 opacity-10 z-0">
         <div
           className="absolute inset-0"
           style={{
@@ -39,13 +35,11 @@ function App() {
         ></div>
       </div>
 
-      {/* Content */}
+      {/* Main Content */}
       <div className="relative z-10">
         <Header />
         <main>
-          <section id="home">
-            <Hero />
-          </section>
+          <Hero />
           <section id="about">
             <About />
           </section>
