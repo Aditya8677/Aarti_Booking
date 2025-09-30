@@ -11,6 +11,13 @@ const Gallery: React.FC = () => {
     { id: 6, src: "/gallery/pic6.jpg", title: "विसर्जन - भाग 2" },
     { id: 7, src: "/gallery/pic7.jpg", title: "विसर्जन - भाग 3" },
     { id: 8, src: "/gallery/pic8.jpg", title: "विसर्जन - भाग 4" },
+
+    // ✅ Added 5 more photos (already in your folder)
+    { id: 9, src: "/gallery/pic9.jpg", title: "माँ दुर्गा" },
+    { id: 10, src: "/gallery/pic10.jpg", title: "माँ दुर्गा" },
+    { id: 11, src: "/gallery/pic11.jpg", title: "माँ दुर्गा" },
+    { id: 12, src: "/gallery/pic12.jpg", title: "माँ दुर्गा" },
+    { id: 13, src: "/gallery/pic13.jpg", title: "माँ दुर्गा" },
   ];
 
   return (
@@ -41,7 +48,7 @@ const Gallery: React.FC = () => {
                 />
               </div>
 
-              {/* Title always visible below image */}
+              {/* Title below image */}
               <div className="p-4 text-center">
                 <h4 className="text-white font-semibold text-lg">
                   {image.title}
